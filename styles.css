@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    background: #fafafa;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.url-form {
+    display: flex;
+    width: 800px;
+    flex-flow: row nowrap;
+    margin-top: 50px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.url-form__input {
+    height: 34px;
+    box-sizing: border-box;
+    flex-basis: 700px;
+    padding: 5px 7px;
+
+    border: 0;
+    border-right: 0;
+
+    font-size: 15px;
+    color: #222;
+}
+
+.url-form__button {
+    height: 34px;
+    flex-basis: 100px;
+
+    background: #F96A4F;
+    border: 1px solid #F96A4F;
+    border-right: 0;
+
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+
+    cursor: pointer;
+}
+
+.url-form__button:hover {
+    background: #f7401e;
+}
+
+.player {
+    margin-top: 50px
+}
+
+.waveforms {
+    position: relative;
+    width: calc(100% - 100px);
+    margin-top: 50px;
+}
+
+.audio-graph {
+    position: relative;
+}
+
+.audio-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 1px solid #777;
+}
+
+.waveform {
+    width: 100%;
+    height: 100px;
+}
+
+.waveform__path {
+    stroke: #07f;
+}
+
+.waveform_1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.waveform__path_1 {
+    stroke: #ffdb4d;
+}

@@ -6,7 +6,8 @@ import 'babel-polyfill';
 
 const defaultURLs = [
     'https://s52f.storage.yandex.net/get-mp3/12e248bb94f696448861687c384d7cd9/000551377deab34a/music/46/4/data-0.2:9209747592:6268759',
-    'https://s74e.storage.yandex.net/get-mp3/b84642664978be649eab9461b4e5eb6e/0005513888ea22bd/music/1/6/data-0.2:3773227631:6331453',
+    'https://s08h.storage.yandex.net/get-mp3/a794df344510bef03d9514d2c277d21c/000551396b9dcd48/music/21/5/data-0.2:29365386376:6426748',
+    'https://s42e.storage.yandex.net/get-mp3/953bb8c5338b7456da6ee1d6c37cc8db/0005513ae557b11a/music/23/3/data-0.2:11728522362:6611068',
 ];
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
         super(props);
 
         this.state = {
-            audioUrl: defaultURLs[1],
+            audioUrl: '',
             audioProgress: 0,
             fullPath: '',
             diffPath: '',
@@ -79,6 +80,12 @@ class App extends Component {
         });
     }
 
+    _handleFormSubmit(event) {
+        event.preventDefault();
+
+        this.loadAudioFromUrl(this.urlInput.value);
+    }
+
     _renderSVGWaveform(paths) {
         const {audioProgress} = this.state;
 
@@ -105,33 +112,30 @@ class App extends Component {
 
         return (
             <div className="container">
-                <div className="url-form">
+                <form className="url-form" onSubmit={(event) => this._handleFormSubmit(event)}>
                     <input
                         className="url-form__input"
                         type="text"
                         value={audioUrl}
                         placeholder="Audio URL"
+                        onChange={event => { this.setState({audioUrl: event.target.value}); }}
                         ref={component => { this.urlInput = component; }}
                     />
-                    <button
-                        className="url-form__button"
-                        onClick={() => this.loadAudioFromUrl(this.urlInput.value)}
-                    >
+                    <button className="url-form__button">
                         Load
                     </button>
-                </div>
+                </form>
 
-                {audioUrl &&
-                    <audio
-                        className="player"
-                        ref={component => { this.player = component; }}
-                        src={audioUrl}
-                        autoPlay
-                        controls
-                    >
-                        You browser does't support <code>audio</code> element.
-                    </audio>
-                }
+                <audio
+                    className="player"
+                    ref={component => { this.player = component; }}
+                    src={fullPath && diffPath ? audioUrl : undefined}
+                    autoPlay
+                    controls
+                >
+                    You browser doesn't support <code>audio</code> element.
+                </audio>
+                
 
                 <div className="waveforms">
                     {this._renderSVGWaveform([fullPath, diffPath])}
@@ -141,4 +145,4 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(<App />, document.body);
+ReactDOM.render(<App />, document.getElementById('root'));

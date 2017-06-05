@@ -1,0 +1,41 @@
+{
+  "name": "audio-waveform-svg-path",
+  "version": "1.0.0",
+  "description": "Building path for SVG element to perform waveform view of audio file",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-core": "^6.7.2",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.6.5",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.0",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "gh-pages": "^1.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^2.3.3"
+  },
+  "scripts": {
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Anton Kalinin",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "index.js"
+  ],
+  "keywords": [
+    "audio",
+    "waveform",
+    "svg",
+    "graph"
+  ]
+}

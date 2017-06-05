@@ -1,6 +1,6 @@
 {
   "name": "audio-waveform-svg-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Building path for SVG element to perform waveform view of audio file",
   "main": "index.js",
   "devDependencies": {

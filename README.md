@@ -33,7 +33,7 @@ trackWaveform.loadFromUrl().then(() => {
 ![](https://raw.githubusercontent.com/antonKalinin/audio-waveform-svg-path/master/static/waveform.png)
 
 
-Constructor assept object with one of keys:
+Constructor assepts object with one of keys:
 
 ```js
 {

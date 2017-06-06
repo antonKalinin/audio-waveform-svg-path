@@ -2,6 +2,11 @@
   "name": "audio-waveform-svg-path",
   "version": "1.0.1",
   "description": "Building path for SVG element to perform waveform view of audio file",
+  "repository": "antonKalinin/audio-waveform-svg-path",
+  "homepage": "http://antonkalinin.github.io/audio-waveform-svg-path/",
+  "bugs": {
+    "url": "https://github.com/antonKalinin/audio-waveform-svg-path/issues"
+  },
   "main": "index.js",
   "devDependencies": {
     "babel-core": "^6.7.2",

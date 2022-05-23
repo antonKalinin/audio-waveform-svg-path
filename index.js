@@ -73,7 +73,7 @@ export default class AudioSVGWaveform {
         const response = await fetch(this.url);
         const arrayBuffer = await parseArrayBufferResponse(response);
 
-        this.audioBuffer = await this.context.decodeAudioData(arrayBuffer);
+        this.audioBuffer = await this.context.decodeAudioData(arrayBuffer).catch(()=>{return null};
 
         return this.audioBuffer;
     }
